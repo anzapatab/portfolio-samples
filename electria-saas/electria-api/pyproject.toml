@@ -1,0 +1,95 @@
+[project]
+name = "electria-api"
+version = "0.1.0"
+description = "ELECTRIA - API Backend for Electric Market Intelligence"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [
+    { name = "Andrés Zapata" }
+]
+
+dependencies = [
+    # Web Framework
+    "fastapi>=0.109.0",
+    "uvicorn[standard]>=0.27.0",
+    "python-multipart>=0.0.6",
+
+    # Database
+    "supabase>=2.3.0",
+    "asyncpg>=0.29.0",
+    "sqlalchemy>=2.0.25",
+
+    # AI/ML
+    "anthropic>=0.18.0",
+    "openai>=1.10.0",
+    "cohere>=4.45",
+    "llama-index>=0.10.0",
+    "pinecone-client>=3.0.0",
+
+    # Document Processing
+    "pymupdf>=1.23.0",
+    "beautifulsoup4>=4.12.0",
+    "httpx>=0.26.0",
+
+    # Task Queue
+    "celery>=5.3.0",
+    "redis>=5.0.0",
+
+    # Utilities
+    "pydantic>=2.5.0",
+    "pydantic-settings>=2.1.0",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "python-dotenv>=1.0.0",
+    "tenacity>=8.2.0",
+
+    # Cloud Storage
+    "boto3>=1.34.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.1.0",
+    "mypy>=1.8.0",
+    "pre-commit>=3.6.0",
+    "httpx>=0.26.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # line too long (handled by formatter)
+    "B008",  # do not perform function calls in argument defaults
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app", "packages"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

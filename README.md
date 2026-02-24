@@ -66,6 +66,19 @@ These samples are extracts from 23 production systems I have built and maintaine
 
 All code is tested (80-95% coverage), containerized (Docker, GitHub Actions CI), and built to be handed off cleanly.
 
+## Other production systems (not included in this repo)
+
+- **Unit Commitment optimizer** — MILP with Pyomo + CPLEX, network constraints, storage, and ancillary services (95% test coverage)
+- **BESS/PV dispatch optimizer** — Full-stack FastAPI + React/TypeScript (89K LOC, 360 tests)
+- **Monte Carlo simulation engine** — Power system scenario analysis and capacity cost modeling
+- **Capacity expansion planner** — Agent-based economic modeling for generation investment
+- **Spot price forecasting** — XGBoost/LightGBM with SHAP explainability for electricity markets
+- **PyPSA open-source refactoring** — Modular architecture with SOLID principles (997 tests, +500% modularity)
+- **Automated weekly market reports** — Data pipeline for national grid operator reporting
+- **Web scraping automation** — Multi-source data collection from grid operators (CEN, XM, CENACE, REE)
+- **Tender price analysis system** — Historical bidding data processing and visualization
+- **Curtailment analysis** — Agent-based modeling for solar curtailment in electricity grids
+
 ## Contact
 
 Andres Zapata Barrientos
